@@ -18,7 +18,8 @@ User can upload users data by going to a new page. This new page will have a for
 
 * If valid file upload user should see success messages and the numbers of users imported.
 * If the user tries to upload a non-CSV file, it should say  that file is invalid
-* If some of the information provided within CSV file not valid (violating model validation) * then users should see which records are invalid along with the reasons.
+* If some of the information provided within CSV file not valid (violating model validation) 
+* then users should see which records are invalid along with the reasons.
 * It should be able to handle thousands of records 
 
 ---
