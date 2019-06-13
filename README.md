@@ -22,19 +22,19 @@ User can upload employee data by going to a new page. This new page will have a 
 
 ### Definition of done :
 
-* If valid file upload user should see success messages and the numbers of users imported.
+* If valid file upload user should see success messages.
 * If the user tries to upload a non-CSV file, it should say  that file is invalid
 * If some of the information provided within CSV file not valid (violating model validation)
-* then users should see which records are invalid along with the reasons.
-* It should be able to handle thousands of records
-
+* It should be able to handle hundreds of thousands of records.
+* Users should be able to find if any invalid data was entered.
 ---
 
 ## Objective :
 
 * Develop the feature based on the requirement/user story
 * Follow best practices (coding style, security etc)
+* Ensure code readability and design for scalable, robust application.
 * Write test RSpec for unit and integration. Both for existing and new features.
 * You may install gems that you need
-* You may change the current implementation if needed
+* You may change the current implementation if needed or make assumptions you want.
 * Readme
