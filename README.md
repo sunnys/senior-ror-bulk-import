@@ -44,4 +44,6 @@ User can upload employee data by going to a new page. This new page will have a 
 This is solution to users requirement. It has following prerequisites
 * redis-server up and running on 5432.
 * Make sure resque worker is running to run resque worker add following command in your teminal
+```ruby
 QUEUE=* rake resque:work
+```
