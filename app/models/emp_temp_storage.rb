@@ -1,0 +1,2 @@
+class EmpTempStorage < ApplicationRecord
+end

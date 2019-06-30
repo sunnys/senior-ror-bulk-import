@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @bulk_employee_upload.company.name %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= @bulk_employee_upload.file.url %>
+</p>
+
+<p>
+  <strong>Total: </strong>
+  <strong id="total"><%= @total %></strong>
+</p>
+
+<p>
+  <strong>Record Created: </strong>
+  <strong id="created"><%= @employee_count %></strong>
+  <%= link_to 'click here to know more details', employees_bulk_employee_upload_path(@bulk_employee_upload.id) %>
+</p>
+
+<p>
+  <strong>Record Not Created(With Error): </strong>
+  <strong id="errored"><%= @err_count %></strong>
+  <%= link_to 'click here to know more errors details', errors_bulk_employee_upload_path(@bulk_employee_upload.id) %>
+</p>
+
+<%= link_to 'Edit', edit_bulk_employee_upload_path(@bulk_employee_upload) %> |
+<%= link_to 'Back', bulk_employee_uploads_path %>

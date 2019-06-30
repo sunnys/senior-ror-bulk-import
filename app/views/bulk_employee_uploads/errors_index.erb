@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Employees Uploaded With This CSV</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Report to</th>
+      <th>Assigned Policies</th>
+      <th>Errors</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee["employee_name"] %></td>
+        <td><%= employee["email"] %></td>
+        <td><%= employee["phone"] %></td>
+        <td><%= employee["report_to"] %></td>
+        <td><%= employee["assigend_policies"] %></td>
+        <td><%= employee["errors"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'back', @bulk_employee_upload %>
+<%= link_to 'Generate CSV', generate_csv_bulk_employee_upload_path(@bulk_employee_upload.id) %>

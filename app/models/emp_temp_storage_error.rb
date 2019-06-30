@@ -1,0 +1,2 @@
+class EmpTempStorageError < ApplicationRecord
+end

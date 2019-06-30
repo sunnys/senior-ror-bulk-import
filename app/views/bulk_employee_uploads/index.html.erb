@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bulk Employee Files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Upload File</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bulk_employee_uploads.each do |bulk_employee_upload| %>
+      <tr>
+        <td><%= bulk_employee_upload.company.name rescue "NA" %></td>
+        <td><%= bulk_employee_upload.file.url %></td>
+        <td><%= bulk_employee_upload.status %></td>
+        <td><%= link_to 'Show', bulk_employee_upload %></td>
+        <td><%= link_to 'Edit', edit_bulk_employee_upload_path(bulk_employee_upload) %></td>
+        <td><%= link_to 'Destroy', bulk_employee_upload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bulk Employee File', new_bulk_employee_upload_path %>

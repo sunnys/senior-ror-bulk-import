@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
+gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -38,6 +40,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'ffaker'
 end
 
 group :development do
@@ -54,3 +57,12 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'awesome_nested_set'
+
+gem 'devise'
+
+gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
+
+gem 'resque'
+
+gem 'activerecord-import'
+

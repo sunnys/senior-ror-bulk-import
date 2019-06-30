@@ -1,0 +1,29 @@
+<%= form_with(model: bulk_employee_upload, local: true , :html => {:multipart => true}) do |form| %>
+  <% if bulk_employee_upload.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bulk_employee_upload.errors.count, "error") %> prohibited this bulk_employee_upload from being saved:</h2>
+
+      <ul>
+      <% bulk_employee_upload.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :company_id %>
+    <%= form.collection_select(:company_id, Company.all, 'id', 'name') %>
+  </div>
+  <p>
+  Please download a <a href="/samples/valid_sample.csv">sample file</a> from here please make sure you do not change the header in it.
+  </p>
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field :file %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
