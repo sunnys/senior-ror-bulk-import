@@ -9,7 +9,4 @@
 10.times do 
     Company.create!(name: FFaker::Company.name)
 end
-
-100000.times do
-    
-end
+User.create!(email: "admin@example.com", password: "password", password_confirmation: "password")

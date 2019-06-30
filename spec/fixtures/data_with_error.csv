@@ -1,0 +1,12 @@
+Employee Name,Email,Phone,Report To,Assigned Policies
+Sunny,sunny@house.com,99106342,sher@house.com,Sick Leave|Annual Leave
+Ravi,ravi@house.com,41915717,sher@house.com,Sick Leave|Annual Leave
+Sohal,sohal@house.com,97855292,satya@house.com,Sick Leave|Annual Leave
+Krish,krish@house.com,51460731,satya@house.com,Sick Leave|Annual Leave
+Satya,satya@house.com,49232787,seeta@house.com,Sick Leave|Annual Leave
+Sher,sher@house.com,88986763,seeta@house.com,Sick Leave|Annual Leave
+Sandhya,sandhya@house.com,59818586,sher@house.com,Sick Leave|Annual Leave|Maternity Leave
+Alka,alka@house.com,50065407,satya@house.com,Sick Leave|Annual Leave|Maternity Leave
+Seeta,seeta@house.com,50065407,,Sick Leave|Annual Leave|Maternity Leave
+,kaka@pppp.com,,,
+Sunny K,sunny@house.com,555555,sher@house.com,Sick Leave|Annual Leave

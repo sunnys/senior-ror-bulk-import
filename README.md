@@ -47,3 +47,31 @@ This is solution to users requirement. It has following prerequisites
 ```ruby
 QUEUE=* rake resque:work
 ```
+## Steps to run
+* Run ```bundle install```
+* Run ```rake db:setup```
+* Start rails server
+    - ```ruby
+        rails s 
+        ```
+* Start resque worker by typing following commands in the console
+    - ```ruby
+        QUEUE=* rake resque:work
+        ```
+* Open [http://localhost:3000](https://localhost:3000) in your browser
+
+You will see an authentication page, authenticate with email: admin@example.com password: password
+After authentication following page will be shown:
+
+![Homepage](public/screenshots/homepage.png)
+
+In seeds.rb, code for generating fake company data is written, select any company from dropdowm, download sample file which is the same valid_sample.csv, user can download the sample and reupload it to check and if users want their own data all they need to do is keep the same header, change the file data and re-upload the file.
+
+Once you click on upload, employee creation process triggered in background and the moment employee is created, the record created counter on the screen will increase automatically. When you click on click here to know more details link it will redirect users to a place where user can see all the employees created by the uploaded CSV file.
+
+Similarly, if any occurs during the employee creation process the error counter will increase. When user clicks on click here to know more errors details, he will be redirected to a page where all the row with error in the csv file will listed.
+
+![Working](public/screenshots/working.gif)
+
+On the errors details page user can download all the row with error in a csv file bby clicking on Generate CSV button.
+
