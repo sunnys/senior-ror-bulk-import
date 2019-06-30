@@ -73,5 +73,13 @@ Similarly, if any occurs during the employee creation process the error counter 
 
 ![Working](public/screenshots/working.gif)
 
-On the errors details page user can download all the row with error in a csv file bby clicking on Generate CSV button.
+On the errors details page user can download all the row with error in a csv file bby clicking on Generate CSV button. User then can make changes in the downloaded file and re-upload it.
 
+![downloaderror](public/screenshots/download-error.gif)
+
+## Validations
+* Blank Field Validation
+    - ![blankFieldValidation](public/screenshots/blank_field.gif)
+* CSV File Validations
+    - ![csv_validations](public/screenshots/csv_validations.gif)
+    

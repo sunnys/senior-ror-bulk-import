@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :company_id %>
-    <%= form.collection_select(:company_id, Company.all, 'id', 'name') %>
+    <%= form.collection_select(:company_id, Company.all, 'id', 'name', {:include_blank => 'Select Company'}) %>
   </div>
   <p>
   Please download a <a href="/samples/valid_sample.csv">sample file</a> from here please make sure you do not change the header in it.
