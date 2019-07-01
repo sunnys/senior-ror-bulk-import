@@ -18,13 +18,15 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe BulkEmployeeFilesController, :type => :controller do
-
+RSpec.describe BulkEmployeeUploadsController, :type => :controller do
+  # login_user
   # This should return the minimal set of attributes required to create a valid
-  # BulkEmployeeFile. As you add validations to BulkEmployeeFile, be sure to
+  # BulkEmployeeUpload. As you add validations to BulkEmployeeUpload, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    bulk_employee_upload: {
+      company_id: "1"
+    }
   }
 
   let(:invalid_attributes) {
@@ -33,12 +35,12 @@ RSpec.describe BulkEmployeeFilesController, :type => :controller do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # BulkEmployeeFilesController. Be sure to keep this updated too.
+  # BulkEmployeeUploadsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
-
+  login_user
   describe "GET index" do
     it "assigns all bulk_employee_uploads as @bulk_employee_uploads" do
-      bulk_employee_upload = BulkEmployeeFile.create! valid_attributes
+      bulk_employee_upload = BulkEmployeeUpload.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:bulk_employee_uploads)).to eq([bulk_employee_upload])
     end
@@ -46,22 +48,23 @@ RSpec.describe BulkEmployeeFilesController, :type => :controller do
 
   describe "GET show" do
     it "assigns the requested bulk_employee_upload as @bulk_employee_upload" do
-      bulk_employee_upload = BulkEmployeeFile.create! valid_attributes
+      bulk_employee_upload = BulkEmployeeUpload.create! valid_attributes
       get :show, {:id => bulk_employee_upload.to_param}, valid_session
       expect(assigns(:bulk_employee_upload)).to eq(bulk_employee_upload)
     end
   end
 
+  
   describe "GET new" do
     it "assigns a new bulk_employee_upload as @bulk_employee_upload" do
       get :new, {}, valid_session
-      expect(assigns(:bulk_employee_upload)).to be_a_new(BulkEmployeeFile)
+      expect(assigns(:bulk_employee_upload)).to be_a_new(BulkEmployeeUpload)
     end
   end
 
   describe "GET edit" do
     it "assigns the requested bulk_employee_upload as @bulk_employee_upload" do
-      bulk_employee_upload = BulkEmployeeFile.create! valid_attributes
+      bulk_employee_upload = BulkEmployeeUpload.create! valid_attributes
       get :edit, {:id => bulk_employee_upload.to_param}, valid_session
       expect(assigns(:bulk_employee_upload)).to eq(bulk_employee_upload)
     end
@@ -69,28 +72,28 @@ RSpec.describe BulkEmployeeFilesController, :type => :controller do
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new BulkEmployeeFile" do
+      it "creates a new BulkEmployeeUpload" do
         expect {
           post :create, {:bulk_employee_upload => valid_attributes}, valid_session
-        }.to change(BulkEmployeeFile, :count).by(1)
+        }.to change(BulkEmployeeUpload, :count).by(1)
       end
 
       it "assigns a newly created bulk_employee_upload as @bulk_employee_upload" do
         post :create, {:bulk_employee_upload => valid_attributes}, valid_session
-        expect(assigns(:bulk_employee_upload)).to be_a(BulkEmployeeFile)
+        expect(assigns(:bulk_employee_upload)).to be_a(BulkEmployeeUpload)
         expect(assigns(:bulk_employee_upload)).to be_persisted
       end
 
       it "redirects to the created bulk_employee_upload" do
         post :create, {:bulk_employee_upload => valid_attributes}, valid_session
-        expect(response).to redirect_to(BulkEmployeeFile.last)
+        expect(response).to redirect_to(BulkEmployeeUpload.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved bulk_employee_upload as @bulk_employee_upload" do
         post :create, {:bulk_employee_upload => invalid_attributes}, valid_session
-        expect(assigns(:bulk_employee_upload)).to be_a_new(BulkEmployeeFile)
+        expect(assigns(:bulk_employee_upload)).to be_a_new(BulkEmployeeUpload)
       end
 
       it "re-renders the 'new' template" do
@@ -107,20 +110,20 @@ RSpec.describe BulkEmployeeFilesController, :type => :controller do
       }
 
       it "updates the requested bulk_employee_upload" do
-        bulk_employee_upload = BulkEmployeeFile.create! valid_attributes
+        bulk_employee_upload = BulkEmployeeUpload.create! valid_attributes
         put :update, {:id => bulk_employee_upload.to_param, :bulk_employee_upload => new_attributes}, valid_session
         bulk_employee_upload.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested bulk_employee_upload as @bulk_employee_upload" do
-        bulk_employee_upload = BulkEmployeeFile.create! valid_attributes
+        bulk_employee_upload = BulkEmployeeUpload.create! valid_attributes
         put :update, {:id => bulk_employee_upload.to_param, :bulk_employee_upload => valid_attributes}, valid_session
         expect(assigns(:bulk_employee_upload)).to eq(bulk_employee_upload)
       end
 
       it "redirects to the bulk_employee_upload" do
-        bulk_employee_upload = BulkEmployeeFile.create! valid_attributes
+        bulk_employee_upload = BulkEmployeeUpload.create! valid_attributes
         put :update, {:id => bulk_employee_upload.to_param, :bulk_employee_upload => valid_attributes}, valid_session
         expect(response).to redirect_to(bulk_employee_upload)
       end
@@ -128,13 +131,13 @@ RSpec.describe BulkEmployeeFilesController, :type => :controller do
 
     describe "with invalid params" do
       it "assigns the bulk_employee_upload as @bulk_employee_upload" do
-        bulk_employee_upload = BulkEmployeeFile.create! valid_attributes
+        bulk_employee_upload = BulkEmployeeUpload.create! valid_attributes
         put :update, {:id => bulk_employee_upload.to_param, :bulk_employee_upload => invalid_attributes}, valid_session
         expect(assigns(:bulk_employee_upload)).to eq(bulk_employee_upload)
       end
 
       it "re-renders the 'edit' template" do
-        bulk_employee_upload = BulkEmployeeFile.create! valid_attributes
+        bulk_employee_upload = BulkEmployeeUpload.create! valid_attributes
         put :update, {:id => bulk_employee_upload.to_param, :bulk_employee_upload => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
@@ -143,14 +146,14 @@ RSpec.describe BulkEmployeeFilesController, :type => :controller do
 
   describe "DELETE destroy" do
     it "destroys the requested bulk_employee_upload" do
-      bulk_employee_upload = BulkEmployeeFile.create! valid_attributes
+      bulk_employee_upload = BulkEmployeeUpload.create! valid_attributes
       expect {
         delete :destroy, {:id => bulk_employee_upload.to_param}, valid_session
-      }.to change(BulkEmployeeFile, :count).by(-1)
+      }.to change(BulkEmployeeUpload, :count).by(-1)
     end
 
     it "redirects to the bulk_employee_uploads list" do
-      bulk_employee_upload = BulkEmployeeFile.create! valid_attributes
+      bulk_employee_upload = BulkEmployeeUpload.create! valid_attributes
       delete :destroy, {:id => bulk_employee_upload.to_param}, valid_session
       expect(response).to redirect_to(bulk_employee_uploads_url)
     end

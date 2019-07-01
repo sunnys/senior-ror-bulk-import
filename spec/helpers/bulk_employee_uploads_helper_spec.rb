@@ -10,6 +10,6 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe BulkEmployeeFilesHelper, :type => :helper do
+RSpec.describe BulkEmployeeUploadsHelper, :type => :helper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

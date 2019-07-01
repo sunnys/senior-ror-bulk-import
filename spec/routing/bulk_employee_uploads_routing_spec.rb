@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe BulkEmployeeFilesController, :type => :routing do
+RSpec.describe BulkEmployeeUploadsController, :type => :routing do
   describe "routing" do
 
     it "routes to #index" do
